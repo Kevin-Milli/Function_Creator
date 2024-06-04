@@ -24,4 +24,40 @@ Il **Function Creator** è una classe progettata per generare funzioni matematic
 - **plot_function():** Grafica la funzione utente attuale.
 - **reset_function():** Reimposta la funzione utente a 0.
 
+## Example of Usage:
+
+### First Example:
+```python
+fc = FunctionCreator()
+fc.set_poly_order(1, 5)
+fc.set_base_range(-5, 6)
+fc.set_base()
+
+fc.make_numerator()
+fc.fx     # −sin(𝑥)+cos(𝑥)
+
+fc.make_denominator()
+fc.fx    # −sin(𝑥)+cos(𝑥)/1+𝑒−𝑥
+
+fc.plot_function()
+```
+
+### Second Example:
+```python
+fc = FunctionCreator()
+fc.set_poly_order(1, 2)
+fc.set_base_range(-2, 2)
+fc.set_base()
+
+fc.make_numerator()
+fc.fx      # 𝑒𝑥−1−𝑒−𝑥
+
+fc.make_denominator()
+fc.fx     # 𝑒𝑥−1−𝑒−𝑥 / (1+𝑒−𝑥)
+
+fc.next_derivate()
+fc.fx   # too long to be posted
+
+```
+
 Questa classe offre un potente strumento per creare e analizzare funzioni complesse, combinando elementi polinomiali e trascendenti, e può essere utile per scopi didattici, di ricerca o di esplorazione matematica.
