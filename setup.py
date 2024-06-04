@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='KevDev.function_creator',
+    name='Function_Creator',
     version='0.1',
     package_dir={'': 'src'},
     packages=find_packages(where='src'),
@@ -17,7 +17,7 @@ setup(
     url='https://github.com/Kevin-Milli/Function_Creator/tree/master',
     classifiers=[
         'Programming Language :: Python :: 3',
-        'License :: OSI Approved :: GNU GENERAL PUBLIC LICENSE',
+        'License :: OSI Approved :: GNU General Public License (GPL)',
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',
