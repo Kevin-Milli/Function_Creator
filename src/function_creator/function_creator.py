@@ -1,5 +1,6 @@
 import numpy as np
 import sympy as sym
+from sympy.plotting.plot import MatplotlibBackend, Plot
 
 class FunctionCreator:
     def __init__(self):
