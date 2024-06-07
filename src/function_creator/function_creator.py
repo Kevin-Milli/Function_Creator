@@ -136,7 +136,28 @@ class FunctionCreator:
         """
         Plots the current user-defined function (`fx`).
         """
-        sym.plot(self.fx)
+        x = self.__x
+        fx = self.fx
+        
+        # Create a plot object
+        plot = sym.plot(fx, show=False, 
+                        xlabel='x', ylabel='f(x)', line_color='blue')
+
+        # plot customization
+        plot[0].line_color = 'blue'
+        plot[0].label = f'$f(x) = {sym.latex(fx)}$'
+        plot.legend = True
+
+        # Matplotlib backend for the grid
+        backend = MatplotlibBackend(plot)
+        backend.fig.suptitle(f'Plot of the function $f(x) = {sym.latex(fx)}$')
+
+        for ax in backend.fig.axes:
+            ax.grid(True, which='both', linestyle='--', linewidth=0.5, alpha=0.5)
+            ax.axhline(0, color='black', linewidth=0.5, linestyle='--', alpha=0.5)
+            ax.axvline(0, color='black', linewidth=0.5, linestyle='--', alpha=0.5)
+
+        backend.show()
             
     # ------------------- Reset Func ------------------------
     def reset_function(self):
